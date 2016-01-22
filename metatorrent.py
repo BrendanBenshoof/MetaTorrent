@@ -1,5 +1,6 @@
 import requests
 import json
+import db
 
 
 def init():
@@ -16,5 +17,8 @@ class MetaTorrent(object):
     def __init__(self, config):
         self.info = config['info']
         self.peers = config['peers']
-        self.db = config['db']
+        self.db = db.TorrentDataBase(config['db'])
         self.k = config['k']
+
+    def search(self, func):
+        self.db.search(func)
