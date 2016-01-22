@@ -1,0 +1,9 @@
+<html>
+<body>
+<b>
+<?
+write("Hello world")
+?>
+</b>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?
+import metatorrent
+import json
+MT = metatorrent.init()
+write(bytes(json.dumps([x[0] for x in MT.peers],"utf-8")))
+?>
