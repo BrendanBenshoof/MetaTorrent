@@ -1,0 +1,8 @@
+<?
+
+ip, port = client
+
+Page.write("http://%s"%ip)
+
+
+?>

@@ -1,0 +1,19 @@
+<?
+
+import json
+
+global time
+time = float(Page.args["t"][0])
+
+q = lambda x: x["time"]>=time
+import metatorrent
+MT = metatorrent.init()
+results = sorted(list(MT.search(q)),key=lambda x: x["time"])
+if len(results) > 100:
+    results[:100]
+Page.write(json.dumps(results))
+
+
+
+
+?>

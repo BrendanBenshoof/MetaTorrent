@@ -2,7 +2,7 @@
 <body>
 <b>
 <?
-write("Hello world")
+Page.write("Hello World")
 ?>
 </b>
 </body>

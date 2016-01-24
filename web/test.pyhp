@@ -1,0 +1,14 @@
+<html>
+<body>
+<b>
+<?
+import metatorrent
+import json
+MT = metatorrent.init()
+
+Page.write(json.dumps(MT.pollPeer("http://127.0.0.1:8000/",0)))
+
+?>
+</b>
+</body>
+</html>

@@ -3,15 +3,16 @@
 <ol>
 <?
 
-query_string = args["q"]
-query = lambda x: x["name"].find(query_string)>0 or x["desc"].find(query_string)>0
+query_string = Page.args["q"]
+global q
+q = query_string[0]
+query = lambda x: x["name"].find(q)>0 or x["desc"].find(q)>0
 
-print("test")
+
 import metatorrent
 MT = metatorrent.init()
 for result in MT.search(query):
-    print(result)
-    write("<li>%s | %s</li>"%(result["name"],result["desc"]))
+    Page.write("<li><a href=\"%s\">MAGNET</a> | %s | %s</li>"%(metatorrent.buildMagnet(result),result["name"],result["desc"]))
 
 
 ?>
